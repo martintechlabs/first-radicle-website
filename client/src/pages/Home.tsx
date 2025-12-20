@@ -1,4 +1,4 @@
-import { FAQItem, FeatureCard, Headline, OrganicButton, PricingCard, Section, Subheadline } from "@/components/LandingComponents";
+import { BlogCard, FAQItem, FeatureCard, Headline, OrganicButton, PricingCard, Section, Subheadline } from "@/components/LandingComponents";
 import { Code, Database, Globe, Layers, Lock, Rocket, Server, ShieldCheck, Terminal, Zap } from "lucide-react";
 
 export default function Home() {
@@ -271,6 +271,48 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </Section>
+
+      {/* Blog Section */}
+      <Section className="bg-secondary/30">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div className="max-w-2xl">
+            <div className="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full font-sans font-medium text-sm mb-6">
+              From the Roots
+            </div>
+            <Headline className="mb-4">Technical Migration Stories</Headline>
+            <Subheadline className="mb-0">
+              Deep dives into the engineering challenges of moving from no-code to code. Real problems, real solutions.
+            </Subheadline>
+          </div>
+          <OrganicButton variant="secondary" className="shrink-0">
+            View All Stories
+          </OrganicButton>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          <BlogCard 
+            title="Escaping the Airtable Trap: Migrating 50k Records"
+            excerpt="How we moved a complex relational schema from Airtable to PostgreSQL without losing a single record or breaking relationships."
+            image="/images/blog-airtable.png"
+            date="Oct 12, 2025"
+            readTime="8 min read"
+          />
+          <BlogCard 
+            title="When the Bubble Burst: Handling Viral Load"
+            excerpt="A post-mortem of a Bubble app that crashed at 5k concurrent users, and the Node.js architecture that replaced it to handle 100k."
+            image="/images/blog-bubble.png"
+            date="Sep 28, 2025"
+            readTime="12 min read"
+          />
+          <BlogCard 
+            title="The API Spaghetti Incident"
+            excerpt="Untangling a web of 40+ Zapier zips into a clean, type-safe backend service. Reducing latency by 400% and costs by 90%."
+            image="/images/blog-api.png"
+            date="Sep 15, 2025"
+            readTime="6 min read"
+          />
         </div>
       </Section>
 

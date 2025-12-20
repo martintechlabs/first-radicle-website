@@ -123,6 +123,49 @@ export function FAQItem({ question, answer }: { question: string; answer: string
   );
 }
 
+export function BlogCard({ 
+  title, 
+  excerpt, 
+  image, 
+  date,
+  readTime 
+}: { 
+  title: string; 
+  excerpt: string; 
+  image: string; 
+  date: string;
+  readTime: string;
+}) {
+  return (
+    <div className="organic-card group overflow-hidden bg-white h-full flex flex-col">
+      <div className="aspect-video overflow-hidden relative">
+        <img 
+          src={image} 
+          alt={title} 
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      </div>
+      <div className="p-6 flex flex-col flex-grow">
+        <div className="flex items-center gap-3 text-xs font-sans font-medium text-muted-foreground mb-3 uppercase tracking-wider">
+          <span>{date}</span>
+          <span className="w-1 h-1 rounded-full bg-primary/30" />
+          <span>{readTime}</span>
+        </div>
+        <h3 className="text-xl font-serif font-bold mb-3 text-primary group-hover:text-chart-3 transition-colors leading-tight">
+          {title}
+        </h3>
+        <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow">
+          {excerpt}
+        </p>
+        <div className="flex items-center text-primary font-sans font-medium text-sm group-hover:translate-x-1 transition-transform duration-300">
+          Read Story <ArrowRight className="w-4 h-4 ml-2" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function Section({ children, className, id }: { children: React.ReactNode; className?: string; id?: string }) {
   return (
     <section id={id} className={cn("py-20 md:py-32 px-4 relative overflow-hidden", className)}>
