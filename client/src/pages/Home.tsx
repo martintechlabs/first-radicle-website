@@ -1,123 +1,128 @@
-import { BrutalButton, FAQItem, FeatureCard, Headline, PricingCard, Section, Subheadline } from "@/components/LandingComponents";
-import { Code, Cpu, Database, Globe, Layers, Lock, Rocket, Server, ShieldCheck, Terminal, Zap } from "lucide-react";
+import { FAQItem, FeatureCard, Headline, OrganicButton, PricingCard, Section, Subheadline } from "@/components/LandingComponents";
+import { Code, Database, Globe, Layers, Lock, Rocket, Server, ShieldCheck, Terminal, Zap } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans selection:bg-primary/20">
       {/* Navigation */}
-      <nav className="border-b-2 border-black dark:border-white py-4 sticky top-0 bg-background z-50">
+      <nav className="py-6 sticky top-0 bg-background/80 backdrop-blur-md z-50 border-b border-border">
         <div className="container flex justify-between items-center">
-          <div className="font-mono font-black text-2xl tracking-tighter uppercase">
-            First<span className="text-chart-1">_Radicle</span>
+          <div className="flex items-center gap-3">
+            <img src="/images/logo.png" alt="First Radicle Logo" className="h-10 w-auto" />
+            <div className="font-serif font-bold text-2xl tracking-tight text-primary">
+              First Radicle
+            </div>
           </div>
-          <div className="hidden md:flex gap-8 font-mono font-bold uppercase text-sm">
-            <a href="#problem" className="hover:underline decoration-2 underline-offset-4">The Problem</a>
-            <a href="#solution" className="hover:underline decoration-2 underline-offset-4">Solution</a>
-            <a href="#process" className="hover:underline decoration-2 underline-offset-4">Process</a>
-            <a href="#pricing" className="hover:underline decoration-2 underline-offset-4">Pricing</a>
+          <div className="hidden md:flex gap-8 font-sans font-medium text-sm text-muted-foreground">
+            <a href="#problem" className="hover:text-primary transition-colors">The Problem</a>
+            <a href="#solution" className="hover:text-primary transition-colors">Solution</a>
+            <a href="#process" className="hover:text-primary transition-colors">Process</a>
+            <a href="#pricing" className="hover:text-primary transition-colors">Pricing</a>
           </div>
-          <BrutalButton className="hidden md:inline-flex py-2 px-4 text-sm">
+          <OrganicButton className="hidden md:inline-flex py-2 px-6 text-sm">
             Book Call
-          </BrutalButton>
+          </OrganicButton>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <Section className="pt-24 pb-32 relative overflow-hidden">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <Section className="pt-20 pb-32 relative">
+        {/* Background decorative elements */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent -z-10" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-chart-2/10 rounded-full blur-3xl -z-10" />
+        
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative z-10">
-            <div className="inline-block bg-black text-white dark:bg-white dark:text-black px-3 py-1 font-mono font-bold text-sm mb-6 uppercase tracking-wider">
+            <div className="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full font-sans font-medium text-sm mb-8">
               For No-Code Refugees
             </div>
             <Headline>
-              Stop Building <span className="text-chart-1 bg-black/5 px-2">Toys.</span><br />
-              Start Building <span className="text-chart-2 bg-black/5 px-2">Software.</span>
+              Stop Building Toys.<br />
+              Start Cultivating <span className="text-primary italic">Software.</span>
             </Headline>
             <Subheadline>
-              We turn your struggling Bubble app into a scalable, production-ready React & Node.js MVP in 6 weeks. Guaranteed.
+              We turn your struggling Bubble app into a scalable, production-ready React & Node.js ecosystem in 6 weeks. Guaranteed.
             </Subheadline>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <BrutalButton variant="primary" className="text-lg px-8 py-4">
+            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+              <OrganicButton className="text-lg px-8 py-4">
                 Start Your Build
-              </BrutalButton>
-              <BrutalButton variant="secondary" className="text-lg px-8 py-4">
+              </OrganicButton>
+              <OrganicButton variant="secondary" className="text-lg px-8 py-4">
                 View Case Studies
-              </BrutalButton>
+              </OrganicButton>
             </div>
             
-            <div className="mt-12 flex items-center gap-8 border-t-2 border-black/10 dark:border-white/10 pt-8">
+            <div className="mt-16 flex items-center gap-12 border-t border-border pt-8">
               <div>
-                <div className="font-mono font-black text-3xl">6 WKS</div>
-                <div className="text-sm font-mono uppercase text-muted-foreground">Delivery Time</div>
+                <div className="font-serif font-bold text-3xl text-primary">6 WKS</div>
+                <div className="text-sm font-sans text-muted-foreground mt-1">Delivery Time</div>
               </div>
               <div>
-                <div className="font-mono font-black text-3xl">$10K</div>
-                <div className="text-sm font-mono uppercase text-muted-foreground">Fixed Price</div>
+                <div className="font-serif font-bold text-3xl text-primary">$10K</div>
+                <div className="text-sm font-sans text-muted-foreground mt-1">Fixed Price</div>
               </div>
               <div>
-                <div className="font-mono font-black text-3xl">100%</div>
-                <div className="text-sm font-mono uppercase text-muted-foreground">Money Back</div>
+                <div className="font-serif font-bold text-3xl text-primary">100%</div>
+                <div className="text-sm font-sans text-muted-foreground mt-1">Money Back</div>
               </div>
             </div>
           </div>
           
           <div className="relative">
-            <div className="brutal-card p-2 rotate-2 hover:rotate-0 transition-transform duration-300">
+            <div className="organic-card p-4 rotate-1 hover:rotate-0 transition-transform duration-500 bg-white shadow-xl">
               <img 
-                src="/images/hero-architecture.png" 
-                alt="Scalable Architecture Diagram" 
-                className="w-full h-auto border-2 border-black dark:border-white"
+                src="/images/hero-growth.png" 
+                alt="Digital Growth Ecosystem" 
+                className="w-full h-auto rounded-lg"
               />
             </div>
-            {/* Decorative elements */}
-            <div className="absolute -z-10 top-10 -right-10 w-full h-full bg-chart-2/20 border-2 border-black dark:border-white"></div>
           </div>
         </div>
       </Section>
 
       {/* Trust Strip */}
-      <div className="border-b-2 border-black dark:border-white bg-secondary py-8 overflow-hidden">
+      <div className="border-y border-border bg-white/50 py-12">
         <div className="container">
-          <p className="font-mono text-center text-sm uppercase font-bold mb-6 text-muted-foreground">Trusted by founders migrating from</p>
-          <div className="flex justify-center gap-12 md:gap-24 opacity-60 grayscale">
-            {/* Text logos for simplicity in this demo */}
-            <span className="text-2xl font-black font-mono">BUBBLE</span>
-            <span className="text-2xl font-black font-mono">WEBFLOW</span>
-            <span className="text-2xl font-black font-mono">AIRTABLE</span>
-            <span className="text-2xl font-black font-mono">ZAPIER</span>
+          <p className="font-sans text-center text-sm font-medium mb-8 text-muted-foreground tracking-wide">TRUSTED BY FOUNDERS MIGRATING FROM</p>
+          <div className="flex justify-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+            <span className="text-2xl font-bold font-serif text-primary">Bubble</span>
+            <span className="text-2xl font-bold font-serif text-primary">Webflow</span>
+            <span className="text-2xl font-bold font-serif text-primary">Airtable</span>
+            <span className="text-2xl font-bold font-serif text-primary">Zapier</span>
           </div>
         </div>
       </div>
 
       {/* Problem Section */}
-      <Section id="problem" className="bg-black text-white dark:bg-white dark:text-black">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="order-2 md:order-1">
+      <Section id="problem" className="bg-white">
+        <div className="grid md:grid-cols-2 gap-20 items-center">
+          <div className="order-2 md:order-1 relative">
+            <div className="absolute inset-0 bg-destructive/5 rounded-full blur-3xl transform scale-90" />
             <img 
-              src="/images/pain-chaos.png" 
-              alt="Chaos of No-Code" 
-              className="w-full max-w-md mx-auto border-2 border-white dark:border-black p-2 bg-white dark:bg-black"
+              src="/images/pain-tangle.png" 
+              alt="Complexity Knot" 
+              className="w-full max-w-md mx-auto relative z-10 drop-shadow-2xl"
             />
           </div>
           <div className="order-1 md:order-2">
-            <div className="inline-block border-2 border-chart-1 text-chart-1 px-3 py-1 font-mono font-bold text-sm mb-6 uppercase">
+            <div className="inline-block border border-destructive/30 text-destructive bg-destructive/5 px-4 py-1.5 rounded-full font-sans font-medium text-sm mb-6">
               The Reality Check
             </div>
-            <Headline className="text-white dark:text-black">
-              Your No-Code App is a <span className="text-chart-1">Ticking Time Bomb.</span>
+            <Headline className="text-foreground">
+              Your No-Code App is a <span className="text-destructive font-serif italic">Tangled Mess.</span>
             </Headline>
-            <div className="space-y-6 font-sans text-lg">
-              <div className="flex gap-4">
-                <div className="bg-chart-1 text-white w-8 h-8 flex items-center justify-center font-bold font-mono flex-shrink-0 mt-1">!</div>
-                <p><strong>It crashes under load.</strong> One viral post and your Bubble database chokes. You lose users faster than you gain them.</p>
+            <div className="space-y-8 font-sans text-lg text-muted-foreground">
+              <div className="flex gap-6 items-start">
+                <div className="bg-destructive/10 text-destructive w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0 mt-1">!</div>
+                <p><strong className="text-foreground block mb-1">It crashes under load.</strong> One viral post and your Bubble database chokes. You lose users faster than you gain them.</p>
               </div>
-              <div className="flex gap-4">
-                <div className="bg-chart-1 text-white w-8 h-8 flex items-center justify-center font-bold font-mono flex-shrink-0 mt-1">!</div>
-                <p><strong>Zapier bills are bleeding you dry.</strong> You're paying $500/mo just to move data from A to B. It's inefficient and expensive.</p>
+              <div className="flex gap-6 items-start">
+                <div className="bg-destructive/10 text-destructive w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0 mt-1">!</div>
+                <p><strong className="text-foreground block mb-1">Zapier bills are bleeding you dry.</strong> You're paying $500/mo just to move data from A to B. It's inefficient and expensive.</p>
               </div>
-              <div className="flex gap-4">
-                <div className="bg-chart-1 text-white w-8 h-8 flex items-center justify-center font-bold font-mono flex-shrink-0 mt-1">!</div>
-                <p><strong>Investors won't touch it.</strong> VCs want IP, not a rented house on someone else's land. You need code to raise capital.</p>
+              <div className="flex gap-6 items-start">
+                <div className="bg-destructive/10 text-destructive w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0 mt-1">!</div>
+                <p><strong className="text-foreground block mb-1">Investors won't touch it.</strong> VCs want IP, not a rented house on someone else's land. You need code to raise capital.</p>
               </div>
             </div>
           </div>
@@ -125,11 +130,11 @@ export default function Home() {
       </Section>
 
       {/* Solution Section */}
-      <Section id="solution">
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <Headline>Real Code. Real Scale. <br/>No Headaches.</Headline>
+      <Section id="solution" className="bg-secondary/30">
+        <div className="text-center max-w-4xl mx-auto mb-20">
+          <Headline>Real Code. Organic Scale. <br/>No Headaches.</Headline>
           <Subheadline className="mx-auto">
-            We bridge the gap between validation and venture scale. You get a battle-tested stack enhanced with AI speed.
+            We bridge the gap between validation and venture scale. You get a battle-tested ecosystem enhanced with AI speed.
           </Subheadline>
         </div>
 
@@ -153,114 +158,116 @@ export default function Home() {
       </Section>
 
       {/* Process Section */}
-      <Section id="process" className="bg-secondary">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <Section id="process" className="bg-white">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div>
-            <Headline>From Prototype to Powerhouse in 3 Steps</Headline>
+            <Headline>From Seed to Forest in 3 Steps</Headline>
             <div className="space-y-12 mt-12">
-              <div className="relative pl-12 border-l-4 border-black dark:border-white">
-                <div className="absolute -left-[18px] top-0 bg-black text-white dark:bg-white dark:text-black w-8 h-8 flex items-center justify-center font-mono font-bold rounded-full">1</div>
-                <h3 className="text-2xl font-mono font-bold uppercase mb-2">The Handover</h3>
-                <p className="text-lg">Give us your no-code prototype and a walkthrough. We map your data structures and logic to a real schema.</p>
+              <div className="relative pl-12 border-l-2 border-primary/20">
+                <div className="absolute -left-[9px] top-0 bg-primary text-white w-5 h-5 rounded-full border-4 border-white shadow-sm"></div>
+                <h3 className="text-2xl font-serif font-medium mb-2 text-primary">The Handover</h3>
+                <p className="text-lg text-muted-foreground">Give us your no-code prototype and a walkthrough. We map your data structures and logic to a real schema.</p>
               </div>
-              <div className="relative pl-12 border-l-4 border-black dark:border-white">
-                <div className="absolute -left-[18px] top-0 bg-black text-white dark:bg-white dark:text-black w-8 h-8 flex items-center justify-center font-mono font-bold rounded-full">2</div>
-                <h3 className="text-2xl font-mono font-bold uppercase mb-2">The Build</h3>
-                <p className="text-lg">We sprint for 6 weeks. You get weekly demos on a staging server. We migrate your data and set up auth.</p>
+              <div className="relative pl-12 border-l-2 border-primary/20">
+                <div className="absolute -left-[9px] top-0 bg-primary text-white w-5 h-5 rounded-full border-4 border-white shadow-sm"></div>
+                <h3 className="text-2xl font-serif font-medium mb-2 text-primary">The Cultivation</h3>
+                <p className="text-lg text-muted-foreground">We sprint for 6 weeks. You get weekly demos on a staging server. We migrate your data and set up auth.</p>
               </div>
-              <div className="relative pl-12 border-l-4 border-black dark:border-white">
-                <div className="absolute -left-[18px] top-0 bg-black text-white dark:bg-white dark:text-black w-8 h-8 flex items-center justify-center font-mono font-bold rounded-full">3</div>
-                <h3 className="text-2xl font-mono font-bold uppercase mb-2">The Launch</h3>
-                <p className="text-lg">We deploy to your cloud (AWS/Vercel). We monitor the switch-over. You're now running on professional rails.</p>
+              <div className="relative pl-12 border-l-2 border-primary/20">
+                <div className="absolute -left-[9px] top-0 bg-primary text-white w-5 h-5 rounded-full border-4 border-white shadow-sm"></div>
+                <h3 className="text-2xl font-serif font-medium mb-2 text-primary">The Harvest</h3>
+                <p className="text-lg text-muted-foreground">We deploy to your cloud (AWS/Vercel). We monitor the switch-over. You're now running on professional rails.</p>
               </div>
             </div>
           </div>
           <div>
-            <img 
-              src="/images/process-blueprint.png" 
-              alt="Process Blueprint" 
-              className="w-full border-2 border-black dark:border-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]"
-            />
+            <div className="organic-card p-4 bg-secondary/20">
+              <img 
+                src="/images/process-flow.png" 
+                alt="Process Flow Diagram" 
+                className="w-full rounded-lg shadow-sm"
+              />
+            </div>
           </div>
         </div>
       </Section>
 
       {/* Features Grid */}
-      <Section>
+      <Section className="bg-secondary/30">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="col-span-full mb-8">
-            <Headline>Technical Specs</Headline>
+          <div className="col-span-full mb-8 text-center md:text-left">
+            <Headline>Technical Ecosystem</Headline>
           </div>
-          <div className="border-2 border-black dark:border-white p-6 hover:bg-secondary transition-colors">
-            <Database className="w-8 h-8 mb-4" />
-            <h4 className="font-mono font-bold uppercase mb-2">PostgreSQL DB</h4>
-            <p className="text-sm">Structured, relational data that scales.</p>
+          <div className="organic-card p-6 hover:bg-white transition-colors">
+            <Database className="w-8 h-8 mb-4 text-primary" />
+            <h4 className="font-serif font-bold mb-2 text-primary">PostgreSQL DB</h4>
+            <p className="text-sm text-muted-foreground">Structured, relational data that scales.</p>
           </div>
-          <div className="border-2 border-black dark:border-white p-6 hover:bg-secondary transition-colors">
-            <Globe className="w-8 h-8 mb-4" />
-            <h4 className="font-mono font-bold uppercase mb-2">React Frontend</h4>
-            <p className="text-sm">Snappy, app-like experience.</p>
+          <div className="organic-card p-6 hover:bg-white transition-colors">
+            <Globe className="w-8 h-8 mb-4 text-primary" />
+            <h4 className="font-serif font-bold mb-2 text-primary">React Frontend</h4>
+            <p className="text-sm text-muted-foreground">Snappy, app-like experience.</p>
           </div>
-          <div className="border-2 border-black dark:border-white p-6 hover:bg-secondary transition-colors">
-            <Server className="w-8 h-8 mb-4" />
-            <h4 className="font-mono font-bold uppercase mb-2">Node.js API</h4>
-            <p className="text-sm">Fast, event-driven backend logic.</p>
+          <div className="organic-card p-6 hover:bg-white transition-colors">
+            <Server className="w-8 h-8 mb-4 text-primary" />
+            <h4 className="font-serif font-bold mb-2 text-primary">Node.js API</h4>
+            <p className="text-sm text-muted-foreground">Fast, event-driven backend logic.</p>
           </div>
-          <div className="border-2 border-black dark:border-white p-6 hover:bg-secondary transition-colors">
-            <ShieldCheck className="w-8 h-8 mb-4" />
-            <h4 className="font-mono font-bold uppercase mb-2">Secure Auth</h4>
-            <p className="text-sm">JWTs, OAuth, and role-based access.</p>
+          <div className="organic-card p-6 hover:bg-white transition-colors">
+            <ShieldCheck className="w-8 h-8 mb-4 text-primary" />
+            <h4 className="font-serif font-bold mb-2 text-primary">Secure Auth</h4>
+            <p className="text-sm text-muted-foreground">JWTs, OAuth, and role-based access.</p>
           </div>
-          <div className="border-2 border-black dark:border-white p-6 hover:bg-secondary transition-colors">
-            <Layers className="w-8 h-8 mb-4" />
-            <h4 className="font-mono font-bold uppercase mb-2">Clean Architecture</h4>
-            <p className="text-sm">Modular code that's easy to extend.</p>
+          <div className="organic-card p-6 hover:bg-white transition-colors">
+            <Layers className="w-8 h-8 mb-4 text-primary" />
+            <h4 className="font-serif font-bold mb-2 text-primary">Clean Architecture</h4>
+            <p className="text-sm text-muted-foreground">Modular code that's easy to extend.</p>
           </div>
-          <div className="border-2 border-black dark:border-white p-6 hover:bg-secondary transition-colors">
-            <Terminal className="w-8 h-8 mb-4" />
-            <h4 className="font-mono font-bold uppercase mb-2">CI/CD Pipeline</h4>
-            <p className="text-sm">Automated testing and deployment.</p>
+          <div className="organic-card p-6 hover:bg-white transition-colors">
+            <Terminal className="w-8 h-8 mb-4 text-primary" />
+            <h4 className="font-serif font-bold mb-2 text-primary">CI/CD Pipeline</h4>
+            <p className="text-sm text-muted-foreground">Automated testing and deployment.</p>
           </div>
-          <div className="border-2 border-black dark:border-white p-6 hover:bg-secondary transition-colors">
-            <Code className="w-8 h-8 mb-4" />
-            <h4 className="font-mono font-bold uppercase mb-2">TypeScript</h4>
-            <p className="text-sm">Type-safe code for fewer bugs.</p>
+          <div className="organic-card p-6 hover:bg-white transition-colors">
+            <Code className="w-8 h-8 mb-4 text-primary" />
+            <h4 className="font-serif font-bold mb-2 text-primary">TypeScript</h4>
+            <p className="text-sm text-muted-foreground">Type-safe code for fewer bugs.</p>
           </div>
-          <div className="border-2 border-black dark:border-white p-6 hover:bg-secondary transition-colors">
-            <Rocket className="w-8 h-8 mb-4" />
-            <h4 className="font-mono font-bold uppercase mb-2">SEO Optimized</h4>
-            <p className="text-sm">Server-side rendering ready.</p>
+          <div className="organic-card p-6 hover:bg-white transition-colors">
+            <Rocket className="w-8 h-8 mb-4 text-primary" />
+            <h4 className="font-serif font-bold mb-2 text-primary">SEO Optimized</h4>
+            <p className="text-sm text-muted-foreground">Server-side rendering ready.</p>
           </div>
         </div>
       </Section>
 
       {/* Social Proof */}
-      <Section className="bg-black text-white dark:bg-white dark:text-black">
-        <Headline className="text-center text-white dark:text-black mb-16">Founder Stories</Headline>
+      <Section className="bg-primary text-primary-foreground">
+        <Headline className="text-center text-primary-foreground mb-16">Founder Stories</Headline>
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="border-2 border-white dark:border-black p-8 relative">
-            <div className="text-6xl font-serif absolute top-4 left-4 opacity-20">"</div>
-            <p className="text-lg font-medium relative z-10 mb-6">
+          <div className="bg-white/10 backdrop-blur-sm p-10 rounded-2xl relative border border-white/10">
+            <div className="text-6xl font-serif absolute top-6 left-6 opacity-20">"</div>
+            <p className="text-lg font-medium relative z-10 mb-8 leading-relaxed">
               "We hit 5,000 users on Bubble and the app just stopped working. First Radicle migrated us in 5 weeks. We just raised our Seed round on the new tech stack."
             </p>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-gray-700 rounded-full"></div>
+              <div className="w-12 h-12 bg-white/20 rounded-full"></div>
               <div>
-                <div className="font-mono font-bold uppercase">Sarah Jenkins</div>
-                <div className="text-sm opacity-70">Founder, FinFlow</div>
+                <div className="font-serif font-bold text-lg">Sarah Jenkins</div>
+                <div className="text-sm opacity-80">Founder, FinFlow</div>
               </div>
             </div>
           </div>
-          <div className="border-2 border-white dark:border-black p-8 relative">
-            <div className="text-6xl font-serif absolute top-4 left-4 opacity-20">"</div>
-            <p className="text-lg font-medium relative z-10 mb-6">
+          <div className="bg-white/10 backdrop-blur-sm p-10 rounded-2xl relative border border-white/10">
+            <div className="text-6xl font-serif absolute top-6 left-6 opacity-20">"</div>
+            <p className="text-lg font-medium relative z-10 mb-8 leading-relaxed">
               "I was spending $2k/month on Zapier. The custom backend First Radicle built cut our operational costs by 90% and runs 10x faster."
             </p>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-gray-700 rounded-full"></div>
+              <div className="w-12 h-12 bg-white/20 rounded-full"></div>
               <div>
-                <div className="font-mono font-bold uppercase">Marcus Chen</div>
-                <div className="text-sm opacity-70">CEO, DataSync</div>
+                <div className="font-serif font-bold text-lg">Marcus Chen</div>
+                <div className="text-sm opacity-80">CEO, DataSync</div>
               </div>
             </div>
           </div>
@@ -274,7 +281,7 @@ export default function Home() {
           <Subheadline className="mx-auto">No hourly billing surprises. No scope creep. Just results.</Subheadline>
         </div>
         
-        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
           <PricingCard 
             title="Strategy Audit"
             price="$249"
@@ -318,12 +325,12 @@ export default function Home() {
       </Section>
 
       {/* FAQ */}
-      <Section className="bg-secondary">
+      <Section className="bg-white">
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <Headline>FAQ</Headline>
-            <p className="text-lg mb-6">Have questions? We have answers.</p>
-            <BrutalButton>Contact Support</BrutalButton>
+            <p className="text-lg mb-8 text-muted-foreground">Have questions? We have answers.</p>
+            <OrganicButton variant="secondary">Contact Support</OrganicButton>
           </div>
           <div className="md:col-span-8">
             <FAQItem 
@@ -351,62 +358,65 @@ export default function Home() {
       </Section>
 
       {/* Final CTA */}
-      <Section className="bg-chart-1 text-white text-center py-32">
-        <h2 className="text-5xl md:text-7xl font-black font-mono uppercase mb-8 leading-none">
-          Ready to Scale?
+      <Section className="bg-primary/5 text-center py-32">
+        <h2 className="text-5xl md:text-7xl font-serif font-medium mb-8 leading-tight text-primary">
+          Ready to <span className="italic">Scale?</span>
         </h2>
-        <p className="text-xl md:text-2xl font-medium max-w-2xl mx-auto mb-12">
+        <p className="text-xl md:text-2xl font-sans text-muted-foreground max-w-2xl mx-auto mb-12">
           Don't let your no-code prototype hold you back. Secure your spot for next month's sprint.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <button className="bg-black text-white border-2 border-white px-8 py-4 font-mono font-bold uppercase text-xl hover:bg-white hover:text-black transition-colors brutal-shadow">
+          <OrganicButton className="text-xl px-10 py-5 shadow-lg hover:shadow-xl">
             Apply Now - $10k Fixed
-          </button>
-          <button className="bg-transparent text-white border-2 border-white px-8 py-4 font-mono font-bold uppercase text-xl hover:bg-white hover:text-black transition-colors">
+          </OrganicButton>
+          <OrganicButton variant="secondary" className="text-xl px-10 py-5 bg-white hover:bg-white/80">
             Book a Strategy Call
-          </button>
+          </OrganicButton>
         </div>
-        <p className="mt-8 text-sm opacity-80 font-mono uppercase">
+        <p className="mt-8 text-sm text-muted-foreground font-sans uppercase tracking-widest">
           Limited to 5 clients per month to ensure quality.
         </p>
       </Section>
 
       {/* Footer */}
-      <footer className="bg-black text-white py-12 border-t-2 border-white">
+      <footer className="bg-primary text-primary-foreground py-16">
         <div className="container">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="col-span-2">
-              <div className="font-mono font-black text-2xl tracking-tighter uppercase mb-6">
-                First<span className="text-chart-1">_Radicle</span>
+              <div className="flex items-center gap-3 mb-6">
+                <img src="/images/logo.png" alt="First Radicle Logo" className="h-8 w-auto brightness-0 invert" />
+                <div className="font-serif font-bold text-2xl tracking-tight">
+                  First Radicle
+                </div>
               </div>
-              <p className="text-gray-400 max-w-sm">
+              <p className="text-primary-foreground/70 max-w-sm leading-relaxed">
                 The bridge between validation and venture scale. We build the technical foundation for the next generation of unicorns.
               </p>
             </div>
             <div>
-              <h4 className="font-mono font-bold uppercase mb-4 text-chart-1">Company</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">About</a></li>
-                <li><a href="#" className="hover:text-white">Case Studies</a></li>
-                <li><a href="#" className="hover:text-white">Manifesto</a></li>
-                <li><a href="#" className="hover:text-white">Careers</a></li>
+              <h4 className="font-serif font-bold mb-6 text-chart-2">Company</h4>
+              <ul className="space-y-3 text-primary-foreground/70">
+                <li><a href="#" className="hover:text-white transition-colors">About</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Case Studies</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Manifesto</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-mono font-bold uppercase mb-4 text-chart-1">Legal</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white">Guarantee</a></li>
+              <h4 className="font-serif font-bold mb-6 text-chart-2">Legal</h4>
+              <ul className="space-y-3 text-primary-foreground/70">
+                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Guarantee</a></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 font-mono">
+          <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-primary-foreground/50 font-sans">
             <div>&copy; 2025 First Radicle. All rights reserved.</div>
             <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white">Twitter</a>
-              <a href="#" className="hover:text-white">LinkedIn</a>
-              <a href="#" className="hover:text-white">GitHub</a>
+              <a href="#" className="hover:text-white transition-colors">Twitter</a>
+              <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
+              <a href="#" className="hover:text-white transition-colors">GitHub</a>
             </div>
           </div>
         </div>

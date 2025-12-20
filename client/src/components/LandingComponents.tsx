@@ -1,165 +1,134 @@
 import { cn } from "@/lib/utils";
-import { ArrowRight, Check, X } from "lucide-react";
-import React from "react";
+import { ArrowRight, Check, ChevronDown, ChevronUp } from "lucide-react";
+import { useState } from "react";
 
-// Section Container
-export const Section = ({ 
-  className, 
-  children, 
-  id 
-}: { 
-  className?: string; 
-  children: React.ReactNode;
-  id?: string;
-}) => (
-  <section id={id} className={cn("py-20 border-b-2 border-black dark:border-white last:border-b-0", className)}>
-    <div className="container">
-      {children}
-    </div>
-  </section>
-);
-
-// Typography
-export const Headline = ({ 
-  className, 
-  children 
-}: { 
-  className?: string; 
-  children: React.ReactNode 
-}) => (
-  <h2 className={cn("text-4xl md:text-6xl font-black uppercase leading-none mb-8 font-mono", className)}>
-    {children}
-  </h2>
-);
-
-export const Subheadline = ({ 
-  className, 
-  children 
-}: { 
-  className?: string; 
-  children: React.ReactNode 
-}) => (
-  <p className={cn("text-xl md:text-2xl font-sans font-medium max-w-3xl leading-relaxed mb-8", className)}>
-    {children}
-  </p>
-);
-
-// Buttons
-export const BrutalButton = ({ 
-  className, 
-  children, 
-  variant = "primary",
-  ...props 
-}: React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: "primary" | "secondary" }) => (
-  <button 
-    className={cn(
-      variant === "primary" ? "brutal-btn-primary" : "brutal-btn",
-      "inline-flex items-center gap-2",
-      className
-    )}
-    {...props}
-  >
-    {children}
-    <ArrowRight className="w-5 h-5" />
-  </button>
-);
-
-// Cards
-export const FeatureCard = ({
-  title,
-  description,
-  icon: Icon,
-  className
-}: {
-  title: string;
-  description: string;
-  icon?: React.ElementType;
-  className?: string;
-}) => (
-  <div className={cn("brutal-card h-full flex flex-col", className)}>
-    {Icon && (
-      <div className="mb-4 p-3 border-2 border-black dark:border-white w-fit bg-chart-1 text-white dark:text-black">
-        <Icon className="w-8 h-8" />
-      </div>
-    )}
-    <h3 className="text-xl font-bold mb-3 font-mono uppercase">{title}</h3>
-    <p className="text-muted-foreground font-sans leading-relaxed flex-grow">{description}</p>
-  </div>
-);
-
-// Pricing Card
-export const PricingCard = ({
-  title,
-  price,
-  features,
-  isPopular = false,
-  ctaText = "Get Started"
-}: {
-  title: string;
-  price: string;
-  features: string[];
-  isPopular?: boolean;
-  ctaText?: string;
-}) => (
-  <div className={cn(
-    "brutal-card relative flex flex-col",
-    isPopular && "bg-black text-white dark:bg-white dark:text-black"
-  )}>
-    {isPopular && (
-      <div className="absolute -top-5 right-4 bg-chart-1 text-white px-4 py-1 font-mono font-bold border-2 border-black dark:border-white uppercase text-sm">
-        Most Popular
-      </div>
-    )}
-    <h3 className="text-2xl font-bold mb-2 font-mono uppercase">{title}</h3>
-    <div className="text-4xl font-black mb-6 font-mono">{price}</div>
-    
-    <ul className="space-y-4 mb-8 flex-grow">
-      {features.map((feature, i) => (
-        <li key={i} className="flex items-start gap-3">
-          <Check className={cn(
-            "w-5 h-5 mt-0.5 flex-shrink-0",
-            isPopular ? "text-chart-1" : "text-black dark:text-white"
-          )} />
-          <span className="font-sans font-medium">{feature}</span>
-        </li>
-      ))}
-    </ul>
-    
-    <button className={cn(
-      "w-full py-4 font-mono font-bold uppercase border-2 transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none",
-      isPopular 
-        ? "bg-white text-black border-white hover:bg-gray-200 dark:bg-black dark:text-white dark:border-black" 
-        : "bg-black text-white border-black hover:bg-gray-800 dark:bg-white dark:text-black dark:border-white"
-    )}>
-      {ctaText}
-    </button>
-  </div>
-);
-
-// FAQ Item
-export const FAQItem = ({
-  question,
-  answer
-}: {
-  question: string;
-  answer: string;
-}) => {
-  const [isOpen, setIsOpen] = React.useState(false);
-
+// Typography Components
+export function Headline({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
-    <div className="border-2 border-black dark:border-white mb-4">
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-6 text-left font-mono font-bold uppercase hover:bg-secondary transition-colors"
-      >
-        <span className="text-lg">{question}</span>
-        {isOpen ? <X className="w-6 h-6" /> : <ArrowRight className="w-6 h-6" />}
-      </button>
-      {isOpen && (
-        <div className="p-6 pt-0 border-t-2 border-black dark:border-white font-sans leading-relaxed">
-          <div className="pt-4">{answer}</div>
-        </div>
+    <h2 className={cn("text-4xl md:text-6xl font-serif font-medium tracking-tight leading-[1.1] mb-6 text-primary", className)}>
+      {children}
+    </h2>
+  );
+}
+
+export function Subheadline({ children, className }: { children: React.ReactNode; className?: string }) {
+  return (
+    <p className={cn("text-lg md:text-xl text-muted-foreground font-sans leading-relaxed max-w-2xl", className)}>
+      {children}
+    </p>
+  );
+}
+
+// Button Component
+export function OrganicButton({ 
+  children, 
+  variant = "primary", 
+  className,
+  ...props 
+}: React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: "primary" | "secondary" }) {
+  return (
+    <button 
+      className={cn(
+        variant === "primary" ? "organic-btn" : "organic-btn-secondary",
+        "inline-flex items-center gap-2",
+        className
       )}
+      {...props}
+    >
+      {children}
+      {variant === "primary" && <ArrowRight className="w-4 h-4" />}
+    </button>
+  );
+}
+
+// Alias for backward compatibility during refactor
+export const BrutalButton = OrganicButton;
+
+// Card Components
+export function FeatureCard({ title, description, icon: Icon }: { title: string; description: string; icon: any }) {
+  return (
+    <div className="organic-card p-8 group hover:-translate-y-1 transition-transform duration-300 bg-white/50 backdrop-blur-sm h-full flex flex-col">
+      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+        <Icon className="w-6 h-6 text-primary" />
+      </div>
+      <h3 className="text-xl font-serif font-semibold mb-3 text-primary">{title}</h3>
+      <p className="text-muted-foreground leading-relaxed flex-grow">{description}</p>
     </div>
   );
-};
+}
+
+export function PricingCard({ 
+  title, 
+  price, 
+  features, 
+  isPopular = false,
+  ctaText = "Get Started"
+}: { 
+  title: string; 
+  price: string; 
+  features: string[]; 
+  isPopular?: boolean;
+  ctaText?: string;
+}) {
+  return (
+    <div className={cn(
+      "organic-card p-8 relative flex flex-col h-full transition-all duration-300",
+      isPopular ? "border-primary shadow-md bg-white scale-105 z-10" : "bg-white/50 hover:bg-white/80"
+    )}>
+      {isPopular && (
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium shadow-sm">
+          Most Popular
+        </div>
+      )}
+      <h3 className="text-2xl font-serif font-medium mb-2 text-primary">{title}</h3>
+      <div className="text-4xl font-sans font-bold mb-8 text-foreground">{price}</div>
+      
+      <ul className="space-y-4 mb-8 flex-grow">
+        {features.map((feature, i) => (
+          <li key={i} className="flex items-start gap-3 text-muted-foreground">
+            <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+            <span className="text-sm">{feature}</span>
+          </li>
+        ))}
+      </ul>
+      
+      <OrganicButton variant={isPopular ? "primary" : "secondary"} className="w-full justify-center">
+        {ctaText}
+      </OrganicButton>
+    </div>
+  );
+}
+
+export function FAQItem({ question, answer }: { question: string; answer: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="border-b border-border last:border-0">
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full py-6 flex justify-between items-center text-left hover:text-primary transition-colors group"
+      >
+        <span className="text-lg font-serif font-medium pr-8 group-hover:text-primary transition-colors">{question}</span>
+        {isOpen ? <ChevronUp className="w-5 h-5 text-primary" /> : <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-primary" />}
+      </button>
+      <div 
+        className={cn(
+          "overflow-hidden transition-all duration-300 ease-in-out",
+          isOpen ? "max-h-96 opacity-100 pb-6" : "max-h-0 opacity-0"
+        )}
+      >
+        <p className="text-muted-foreground leading-relaxed pr-8">{answer}</p>
+      </div>
+    </div>
+  );
+}
+
+export function Section({ children, className, id }: { children: React.ReactNode; className?: string; id?: string }) {
+  return (
+    <section id={id} className={cn("py-20 md:py-32 px-4 relative overflow-hidden", className)}>
+      <div className="container mx-auto relative z-10">
+        {children}
+      </div>
+    </section>
+  );
+}
