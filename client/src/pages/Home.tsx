@@ -8,7 +8,7 @@ export default function Home() {
       <nav className="border-b-2 border-black dark:border-white py-4 sticky top-0 bg-background z-50">
         <div className="container flex justify-between items-center">
           <div className="font-mono font-black text-2xl tracking-tighter uppercase">
-            CodeFirst<span className="text-chart-1">_MVP</span>
+            First<span className="text-chart-1">_Radicle</span>
           </div>
           <div className="hidden md:flex gap-8 font-mono font-bold uppercase text-sm">
             <a href="#problem" className="hover:underline decoration-2 underline-offset-4">The Problem</a>
@@ -241,7 +241,7 @@ export default function Home() {
           <div className="border-2 border-white dark:border-black p-8 relative">
             <div className="text-6xl font-serif absolute top-4 left-4 opacity-20">"</div>
             <p className="text-lg font-medium relative z-10 mb-6">
-              "We hit 5,000 users on Bubble and the app just stopped working. CodeFirst migrated us in 5 weeks. We just raised our Seed round on the new tech stack."
+              "We hit 5,000 users on Bubble and the app just stopped working. First Radicle migrated us in 5 weeks. We just raised our Seed round on the new tech stack."
             </p>
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-gray-700 rounded-full"></div>
@@ -254,7 +254,7 @@ export default function Home() {
           <div className="border-2 border-white dark:border-black p-8 relative">
             <div className="text-6xl font-serif absolute top-4 left-4 opacity-20">"</div>
             <p className="text-lg font-medium relative z-10 mb-6">
-              "I was spending $2k/month on Zapier. The custom backend CodeFirst built cut our operational costs by 90% and runs 10x faster."
+              "I was spending $2k/month on Zapier. The custom backend First Radicle built cut our operational costs by 90% and runs 10x faster."
             </p>
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-gray-700 rounded-full"></div>
@@ -377,7 +377,7 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="col-span-2">
               <div className="font-mono font-black text-2xl tracking-tighter uppercase mb-6">
-                CodeFirst<span className="text-chart-1">_MVP</span>
+                First<span className="text-chart-1">_Radicle</span>
               </div>
               <p className="text-gray-400 max-w-sm">
                 The bridge between validation and venture scale. We build the technical foundation for the next generation of unicorns.
@@ -402,7 +402,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 font-mono">
-            <div>&copy; 2025 CodeFirst MVP. All rights reserved.</div>
+            <div>&copy; 2025 First Radicle. All rights reserved.</div>
             <div className="flex gap-6 mt-4 md:mt-0">
               <a href="#" className="hover:text-white">Twitter</a>
               <a href="#" className="hover:text-white">LinkedIn</a>
