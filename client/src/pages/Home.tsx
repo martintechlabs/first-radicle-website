@@ -55,12 +55,16 @@ export default function Home() {
               We turn your struggling Bubble app into a scalable, production-ready React & Node.js ecosystem in 6 weeks. Guaranteed.
             </Subheadline>
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
-              <OrganicButton className="text-lg px-8 py-4">
-                Start Your Build
-              </OrganicButton>
-              <OrganicButton variant="secondary" className="text-lg px-8 py-4">
-                View Case Studies
-              </OrganicButton>
+              <Link href="/unblock">
+                <OrganicButton className="text-lg px-8 py-4">
+                  Book Architect Review
+                </OrganicButton>
+              </Link>
+              <a href="#process">
+                <OrganicButton variant="secondary" className="text-lg px-8 py-4">
+                  Explore Full Migration
+                </OrganicButton>
+              </a>
             </div>
             
             <div className="mt-16 flex items-center gap-12 border-t border-border pt-8">
