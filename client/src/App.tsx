@@ -9,6 +9,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import EscapingAirtable from "./pages/blog/EscapingAirtable";
 import WhenBubbleBurst from "./pages/blog/WhenBubbleBurst";
 import ApiSpaghetti from "./pages/blog/ApiSpaghetti";
+import UnblockSession from "./pages/UnblockSession";
 
 
 function Router() {
@@ -18,6 +19,7 @@ function Router() {
       <Route path={"/blog/escaping-airtable"} component={EscapingAirtable} />
       <Route path={"/blog/when-bubble-burst"} component={WhenBubbleBurst} />
       <Route path={"/blog/api-spaghetti"} component={ApiSpaghetti} />
+      <Route path={"/unblock"} component={UnblockSession} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

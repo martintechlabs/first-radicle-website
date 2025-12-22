@@ -19,6 +19,7 @@ export default function Home() {
             <a href="#solution" className="hover:text-primary transition-colors">Solution</a>
             <a href="#process" className="hover:text-primary transition-colors">Process</a>
             <a href="#pricing" className="hover:text-primary transition-colors">Pricing</a>
+            <Link href="/unblock"><a className="hover:text-primary transition-colors font-bold">Unblock Session</a></Link>
           </div>
           <OrganicButton className="hidden md:inline-flex py-2 px-6 text-sm">
             Book Call
