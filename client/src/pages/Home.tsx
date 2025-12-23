@@ -189,13 +189,13 @@ export default function Home() {
               </div>
               <div className="organic-card p-6 hover:bg-white transition-colors">
                 <ShieldCheck className="w-8 h-8 mb-4 text-primary" />
-                <h4 className="font-serif font-bold mb-2 text-primary">Type Safety</h4>
-                <p className="text-sm text-muted-foreground">Type-safe code for fewer bugs.</p>
+                <h4 className="font-serif font-bold mb-2 text-primary">Automated Testing</h4>
+                <p className="text-sm text-muted-foreground">Full test suites for confident deploys.</p>
               </div>
               <div className="organic-card p-6 hover:bg-white transition-colors">
                 <Rocket className="w-8 h-8 mb-4 text-primary" />
-                <h4 className="font-serif font-bold mb-2 text-primary">SEO Optimized</h4>
-                <p className="text-sm text-muted-foreground">Server-side rendering ready.</p>
+                <h4 className="font-serif font-bold mb-2 text-primary">Enterprise Security</h4>
+                <p className="text-sm text-muted-foreground">OWASP best practices built-in.</p>
               </div>
             </div>
           </div>
