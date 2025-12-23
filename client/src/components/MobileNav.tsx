@@ -9,7 +9,7 @@ export function MobileNav() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <button 
         onClick={toggleMenu}
         className="p-2 text-primary hover:bg-primary/5 rounded-md transition-colors"
