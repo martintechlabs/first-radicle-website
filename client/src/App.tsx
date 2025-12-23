@@ -11,6 +11,9 @@ import WhenBubbleBurst from "./pages/blog/WhenBubbleBurst";
 import ApiSpaghetti from "./pages/blog/ApiSpaghetti";
 import UnblockSession from "./pages/UnblockSession";
 import Blog from "./pages/Blog";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Guarantee from "./pages/Guarantee";
 
 
 function Router() {
@@ -22,6 +25,9 @@ function Router() {
       <Route path={"/blog/api-spaghetti"} component={ApiSpaghetti} />
       <Route path={"/unblock"} component={UnblockSession} />
       <Route path={"/blog"} component={Blog} />
+      <Route path={"/about"} component={About} />
+      <Route path={"/contact"} component={Contact} />
+      <Route path={"/guarantee"} component={Guarantee} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

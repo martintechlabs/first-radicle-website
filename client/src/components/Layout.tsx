@@ -54,21 +54,12 @@ export function Layout({ children }: LayoutProps) {
                 The bridge between validation and venture scale. We build the technical foundation for the next generation of unicorns.
               </p>
             </div>
-            <div>
-              <h4 className="font-serif font-bold mb-6 text-chart-2">Company</h4>
-              <ul className="space-y-3 text-primary-foreground/70">
-                <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Case Studies</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Manifesto</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-serif font-bold mb-6 text-chart-2">Legal</h4>
-              <ul className="space-y-3 text-primary-foreground/70">
-                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Guarantee</a></li>
+            <div className="col-span-2 md:col-span-2 flex flex-col md:items-end">
+              <h4 className="font-serif font-bold mb-6 text-chart-2">Explore</h4>
+              <ul className="space-y-3 text-primary-foreground/70 text-right">
+                <li><Link href="/about"><a className="hover:text-white transition-colors">About</a></Link></li>
+                <li><Link href="/contact"><a className="hover:text-white transition-colors">Contact</a></Link></li>
+                <li><Link href="/guarantee"><a className="hover:text-white transition-colors">Guarantee</a></Link></li>
               </ul>
             </div>
           </div>
