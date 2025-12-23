@@ -1,34 +1,11 @@
 import { BlogCard, FAQItem, FeatureCard, Headline, OrganicButton, PricingCard, Section, Subheadline } from "@/components/LandingComponents";
-import { MobileNav } from "@/components/MobileNav";
-import { ArrowRight, Code, Database, Globe, Layers, Lock, Rocket, Server, ShieldCheck, Terminal, Zap } from "lucide-react";
+import { Layout } from "@/components/Layout";
+import { ArrowRight, Code, Database, Lock, Rocket, Server, ShieldCheck, Zap } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans selection:bg-primary/20">
-      {/* Navigation */}
-      <nav className="py-6 sticky top-0 bg-background/80 backdrop-blur-md z-50 border-b border-border">
-        <div className="container flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <img src="/images/logo.png" alt="First Radicle Logo" className="h-10 w-auto" />
-            <div className="font-serif font-bold text-2xl tracking-tight text-primary">
-              First Radicle
-            </div>
-          </div>
-          <div className="hidden lg:flex gap-8 font-sans font-medium text-sm text-muted-foreground">
-            <a href="#problem" className="hover:text-primary transition-colors">The Problem</a>
-            <a href="#solution" className="hover:text-primary transition-colors">Solution</a>
-            <a href="#process" className="hover:text-primary transition-colors">Process</a>
-            <a href="#pricing" className="hover:text-primary transition-colors">Pricing</a>
-            <Link href="/unblock"><a className="hover:text-primary transition-colors font-bold">Unblock Session</a></Link>
-          </div>
-          <OrganicButton className="hidden lg:inline-flex py-2 px-6 text-sm">
-            Book Call
-          </OrganicButton>
-          <MobileNav />
-        </div>
-      </nav>
-
+    <Layout>
       {/* Hero Section */}
       <Section className="pt-20 pb-32 relative">
         {/* Background decorative elements */}
@@ -193,67 +170,34 @@ export default function Home() {
               <div className="relative pl-12 border-l-2 border-primary/20">
                 <div className="absolute -left-[9px] top-0 bg-primary text-white w-5 h-5 rounded-full border-4 border-white shadow-sm"></div>
                 <h3 className="text-2xl font-serif font-medium mb-2 text-primary">The Harvest</h3>
-                <p className="text-lg text-muted-foreground">We deploy to your cloud (AWS/Vercel). We monitor the switch-over. You're now running on professional rails.</p>
+                <p className="text-lg text-muted-foreground">We hand over the keys to your GitHub repo. We deploy to your cloud. You're ready to scale to millions.</p>
               </div>
             </div>
           </div>
-          <div>
-            <div className="organic-card p-4 bg-secondary/20">
-              <img 
-                src="/images/process-flow.png" 
-                alt="Process Flow Diagram" 
-                className="w-full rounded-lg shadow-sm"
-              />
+          <div className="relative">
+            <div className="absolute -inset-4 bg-primary/5 rounded-xl -z-10 transform rotate-2"></div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="organic-card p-6 hover:bg-white transition-colors">
+                <Code className="w-8 h-8 mb-4 text-primary" />
+                <h4 className="font-serif font-bold mb-2 text-primary">Clean Architecture</h4>
+                <p className="text-sm text-muted-foreground">Modular, maintainable code.</p>
+              </div>
+              <div className="organic-card p-6 hover:bg-white transition-colors mt-8">
+                <Database className="w-8 h-8 mb-4 text-primary" />
+                <h4 className="font-serif font-bold mb-2 text-primary">Real Database</h4>
+                <p className="text-sm text-muted-foreground">PostgreSQL with proper relations.</p>
+              </div>
+              <div className="organic-card p-6 hover:bg-white transition-colors">
+                <ShieldCheck className="w-8 h-8 mb-4 text-primary" />
+                <h4 className="font-serif font-bold mb-2 text-primary">Type Safety</h4>
+                <p className="text-sm text-muted-foreground">Type-safe code for fewer bugs.</p>
+              </div>
+              <div className="organic-card p-6 hover:bg-white transition-colors">
+                <Rocket className="w-8 h-8 mb-4 text-primary" />
+                <h4 className="font-serif font-bold mb-2 text-primary">SEO Optimized</h4>
+                <p className="text-sm text-muted-foreground">Server-side rendering ready.</p>
+              </div>
             </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* Features Grid */}
-      <Section className="bg-secondary/30">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="col-span-full mb-8 text-center md:text-left">
-            <Headline>Technical Ecosystem</Headline>
-          </div>
-          <div className="organic-card p-6 hover:bg-white transition-colors">
-            <Database className="w-8 h-8 mb-4 text-primary" />
-            <h4 className="font-serif font-bold mb-2 text-primary">PostgreSQL DB</h4>
-            <p className="text-sm text-muted-foreground">Structured, relational data that scales.</p>
-          </div>
-          <div className="organic-card p-6 hover:bg-white transition-colors">
-            <Globe className="w-8 h-8 mb-4 text-primary" />
-            <h4 className="font-serif font-bold mb-2 text-primary">React Frontend</h4>
-            <p className="text-sm text-muted-foreground">Snappy, app-like experience.</p>
-          </div>
-          <div className="organic-card p-6 hover:bg-white transition-colors">
-            <Server className="w-8 h-8 mb-4 text-primary" />
-            <h4 className="font-serif font-bold mb-2 text-primary">Node.js API</h4>
-            <p className="text-sm text-muted-foreground">Fast, event-driven backend logic.</p>
-          </div>
-          <div className="organic-card p-6 hover:bg-white transition-colors">
-            <ShieldCheck className="w-8 h-8 mb-4 text-primary" />
-            <h4 className="font-serif font-bold mb-2 text-primary">Secure Auth</h4>
-            <p className="text-sm text-muted-foreground">JWTs, OAuth, and role-based access.</p>
-          </div>
-          <div className="organic-card p-6 hover:bg-white transition-colors">
-            <Layers className="w-8 h-8 mb-4 text-primary" />
-            <h4 className="font-serif font-bold mb-2 text-primary">Clean Architecture</h4>
-            <p className="text-sm text-muted-foreground">Modular code that's easy to extend.</p>
-          </div>
-          <div className="organic-card p-6 hover:bg-white transition-colors">
-            <Terminal className="w-8 h-8 mb-4 text-primary" />
-            <h4 className="font-serif font-bold mb-2 text-primary">CI/CD Pipeline</h4>
-            <p className="text-sm text-muted-foreground">Automated testing and deployment.</p>
-          </div>
-          <div className="organic-card p-6 hover:bg-white transition-colors">
-            <Code className="w-8 h-8 mb-4 text-primary" />
-            <h4 className="font-serif font-bold mb-2 text-primary">TypeScript</h4>
-            <p className="text-sm text-muted-foreground">Type-safe code for fewer bugs.</p>
-          </div>
-          <div className="organic-card p-6 hover:bg-white transition-colors">
-            <Rocket className="w-8 h-8 mb-4 text-primary" />
-            <h4 className="font-serif font-bold mb-2 text-primary">SEO Optimized</h4>
-            <p className="text-sm text-muted-foreground">Server-side rendering ready.</p>
           </div>
         </div>
       </Section>
@@ -442,50 +386,6 @@ export default function Home() {
           Limited to 5 clients per month to ensure quality.
         </p>
       </Section>
-
-      {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-16">
-        <div className="container">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div className="col-span-2">
-              <div className="flex items-center gap-3 mb-6">
-                <img src="/images/logo.png" alt="First Radicle Logo" className="h-8 w-auto brightness-0 invert" />
-                <div className="font-serif font-bold text-2xl tracking-tight">
-                  First Radicle
-                </div>
-              </div>
-              <p className="text-primary-foreground/70 max-w-sm leading-relaxed">
-                The bridge between validation and venture scale. We build the technical foundation for the next generation of unicorns.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-serif font-bold mb-6 text-chart-2">Company</h4>
-              <ul className="space-y-3 text-primary-foreground/70">
-                <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Case Studies</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Manifesto</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-serif font-bold mb-6 text-chart-2">Legal</h4>
-              <ul className="space-y-3 text-primary-foreground/70">
-                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Guarantee</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-primary-foreground/50 font-sans">
-            <div>&copy; 2025 First Radicle. All rights reserved.</div>
-            <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white transition-colors">Twitter</a>
-              <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
-              <a href="#" className="hover:text-white transition-colors">GitHub</a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </Layout>
   );
 }
