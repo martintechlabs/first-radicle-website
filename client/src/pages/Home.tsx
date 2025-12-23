@@ -1,4 +1,5 @@
 import { BlogCard, FAQItem, FeatureCard, Headline, OrganicButton, PricingCard, Section, Subheadline } from "@/components/LandingComponents";
+import { MobileNav } from "@/components/MobileNav";
 import { ArrowRight, Code, Database, Globe, Layers, Lock, Rocket, Server, ShieldCheck, Terminal, Zap } from "lucide-react";
 import { Link } from "wouter";
 
@@ -24,6 +25,7 @@ export default function Home() {
           <OrganicButton className="hidden md:inline-flex py-2 px-6 text-sm">
             Book Call
           </OrganicButton>
+          <MobileNav />
         </div>
       </nav>
 
@@ -99,11 +101,11 @@ export default function Home() {
       <div className="border-y border-border bg-white/50 py-12">
         <div className="container">
           <p className="font-sans text-center text-sm font-medium mb-8 text-muted-foreground tracking-wide">TRUSTED BY FOUNDERS MIGRATING FROM</p>
-          <div className="flex justify-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-            <span className="text-2xl font-bold font-serif text-primary">Bubble</span>
-            <span className="text-2xl font-bold font-serif text-primary">Webflow</span>
-            <span className="text-2xl font-bold font-serif text-primary">Airtable</span>
-            <span className="text-2xl font-bold font-serif text-primary">Zapier</span>
+          <div className="flex flex-wrap justify-center gap-8 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+            <span className="text-xl md:text-2xl font-bold font-serif text-primary">Bubble</span>
+            <span className="text-xl md:text-2xl font-bold font-serif text-primary">Webflow</span>
+            <span className="text-xl md:text-2xl font-bold font-serif text-primary">Airtable</span>
+            <span className="text-xl md:text-2xl font-bold font-serif text-primary">Zapier</span>
           </div>
         </div>
       </div>
