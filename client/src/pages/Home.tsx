@@ -309,7 +309,7 @@ export default function Home() {
             isPopular={true}
             ctaText="Start Application"
             features={[
-              "Full React/Node.js Build",
+              "Full Stack Migration",
               "Database Migration",
               "Auth & Payments Setup",
               "6-Week Delivery Guarantee",
