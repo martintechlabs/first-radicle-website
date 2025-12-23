@@ -87,6 +87,7 @@ export default function Home() {
             <span className="text-xl md:text-2xl font-bold font-serif text-primary">Lovable</span>
             <span className="text-xl md:text-2xl font-bold font-serif text-primary">Bolt</span>
             <span className="text-xl md:text-2xl font-bold font-serif text-primary">Cursor</span>
+            <span className="text-xl md:text-2xl font-bold font-serif text-primary">v0</span>
           </div>
         </div>
       </div>
