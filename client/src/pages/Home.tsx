@@ -247,9 +247,11 @@ export default function Home() {
               Deep dives into the engineering challenges of moving from no-code to code. Real problems, real solutions.
             </Subheadline>
           </div>
-          <OrganicButton variant="secondary" className="shrink-0">
-            View All Stories
-          </OrganicButton>
+          <Link href="/blog">
+            <OrganicButton variant="secondary" className="shrink-0">
+              View All Stories
+            </OrganicButton>
+          </Link>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">

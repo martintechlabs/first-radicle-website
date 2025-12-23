@@ -10,6 +10,7 @@ import EscapingAirtable from "./pages/blog/EscapingAirtable";
 import WhenBubbleBurst from "./pages/blog/WhenBubbleBurst";
 import ApiSpaghetti from "./pages/blog/ApiSpaghetti";
 import UnblockSession from "./pages/UnblockSession";
+import Blog from "./pages/Blog";
 
 
 function Router() {
@@ -20,6 +21,7 @@ function Router() {
       <Route path={"/blog/when-bubble-burst"} component={WhenBubbleBurst} />
       <Route path={"/blog/api-spaghetti"} component={ApiSpaghetti} />
       <Route path={"/unblock"} component={UnblockSession} />
+      <Route path={"/blog"} component={Blog} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
