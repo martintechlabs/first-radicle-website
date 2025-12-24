@@ -32,7 +32,7 @@ export default function Guarantee() {
             Because we've seen too many founders get burned by agencies that drag projects out for months to bill more hours. We are incentivized to ship fast and ship right.
           </p>
 
-          <h3>What "Production Ready" Means</h3>
+          <h3 className="mt-12">What "Production Ready" Means</h3>
           <ul className="list-none pl-0 space-y-4">
             <li className="flex gap-3 items-start">
               <span className="text-chart-2 font-bold text-xl">✓</span>
