@@ -217,7 +217,7 @@ export default function Home() {
               "We hit 5,000 users on Bubble and the app just stopped working. First Radicle migrated us in 5 weeks. We just raised our Seed round on the new tech stack."
             </p>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-white/20 rounded-full"></div>
+              <img src="/images/avatar-sarah.jpg" alt="Sarah Jenkins" className="w-12 h-12 rounded-full object-cover border-2 border-white/20" />
               <div>
                 <div className="font-serif font-bold text-lg">Sarah Jenkins</div>
                 <div className="text-sm opacity-80">Founder, FinFlow</div>
@@ -230,7 +230,7 @@ export default function Home() {
               "I was spending $2k/month on Zapier. The custom backend First Radicle built cut our operational costs by 90% and runs 10x faster."
             </p>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-white/20 rounded-full"></div>
+              <img src="/images/avatar-marcus.jpg" alt="Marcus Chen" className="w-12 h-12 rounded-full object-cover border-2 border-white/20" />
               <div>
                 <div className="font-serif font-bold text-lg">Marcus Chen</div>
                 <div className="text-sm opacity-80">CEO, DataSync</div>
