@@ -338,11 +338,10 @@ export default function Home() {
             price="$249"
             ctaText="Book Session"
             features={[
-              "1-hour deep dive call",
-              "Architecture review",
-              "Migration roadmap",
-              "Cost savings analysis",
-              "Risk assessment"
+              "45-min deep-dive call",
+              "Collaborative review of issue",
+              "Debugging and resolution",
+              "1-pager of pros/cons of current code"
             ]}
           />
           <PricingCard 
