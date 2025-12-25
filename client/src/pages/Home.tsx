@@ -402,7 +402,7 @@ export default function Home() {
             />
             <FAQItem 
               question="What are the ongoing costs?"
-              answer="Unlike Bubble, you only pay for hosting (usually $20-$50/mo on Vercel/Render) and any third-party APIs you use. No more user-limits or row-limits."
+              answer="You only pay for hosting (usually $20-$50/mo on Vercel/Render) and any third-party APIs you use. No more user-limits or row-limits."
             />
           </div>
         </div>
