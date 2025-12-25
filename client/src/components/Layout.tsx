@@ -30,7 +30,7 @@ export function Layout({ children }: LayoutProps) {
           </div>
           <Link href="/unblock">
             <OrganicButton className="hidden lg:inline-flex py-2 px-6 text-sm">
-              Book Call <ArrowRight className="ml-2 w-4 h-4" />
+              Book Call
             </OrganicButton>
           </Link>
           <MobileNav />
