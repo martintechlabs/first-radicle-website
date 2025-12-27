@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Outfit } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -39,6 +40,7 @@ export default function RootLayout({
           <ScrollToTop />
           {children}
         </TooltipProvider>
+        <Analytics />
       </body>
     </html>
   );
